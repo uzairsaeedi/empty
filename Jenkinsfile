@@ -25,7 +25,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying static website...'
-               sh 'sudo cp -r * /var/www/html/'
+               sh "cp -r Jenkinsfile assets index.html readme.txt /var/www/html/"
+
             }
         }
     }
