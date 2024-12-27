@@ -25,8 +25,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying static website...'
-                // Ensure the deployment path matches your environment. Adjust '/var/www/html/' to your server's actual web root directory if different.
-                sh 'cp -r * /var/www/html/'
+                // Use Windows batch command (bat) instead of sh
+                bat 'copy * C:\\inetpub\\wwwroot\\' // Adjust the path to your server's actual web root directory
             }
         }
     }
