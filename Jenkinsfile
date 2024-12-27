@@ -25,8 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying static website...'
-                // Use Windows batch command (bat) instead of sh
-                bat 'copy * C:\\inetpub\\wwwroot\\' // Adjust the path to your server's actual web root directory
+               sh 'sudo cp -r * /var/www/html/'
             }
         }
     }
