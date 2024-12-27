@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/uzairsaeedi/empty.git'
+                // Clone the repository from GitHub, explicitly using the 'main' branch
+                git branch: 'main', url: 'https://github.com/uzairsaeedi/empty.git'
             }
         }
         stage('Build') {
@@ -24,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying static website...'
-                // Ensure the deployment path matches your environment. Adjust `/var/www/html/` to your server's actual web root directory if different.
+                // Ensure the deployment path matches your environment. Adjust '/var/www/html/' to your server's actual web root directory if different.
                 sh 'cp -r * /var/www/html/'
             }
         }
