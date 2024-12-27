@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/StaticWebsitePipeline.git'
+                git 'https://github.com/uzairsaeedi/empty.git'
             }
         }
         stage('Build') {
