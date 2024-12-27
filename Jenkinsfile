@@ -6,6 +6,11 @@ pipeline {
                 git 'https://github.com/uzairsaeedi/empty.git'
             }
         }
+		stage('Checkout') {
+            steps {
+                git url: 'https://github.com/uzairsaeedi/empty.git', branch: 'main'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'No build steps required for static website.'
