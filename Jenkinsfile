@@ -1,14 +1,13 @@
 pipeline {
     agent any
     stages {
+		stage('Clean Workspace') {
+            steps {
+                deleteDir()  // Clean up the workspace
+        }
         stage('Clone Repository') {
             steps {
                 git 'https://github.com/uzairsaeedi/empty.git'
-            }
-        }
-		stage('Checkout') {
-            steps {
-                git url: 'https://github.com/uzairsaeedi/empty.git', branch: 'main'
             }
         }
         stage('Build') {
